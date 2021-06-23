@@ -3,7 +3,9 @@ h3 {
 }
 
 img {
-
+   width:"400";
+   height:"500";
+   border-radius: 8px;
 }
 
 .photos {
