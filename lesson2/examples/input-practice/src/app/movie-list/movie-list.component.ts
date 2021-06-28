@@ -14,10 +14,18 @@ export class MovieListComponent implements OnInit {
    }
    
    addMovie (newTitle: string) {
+      let titleBlank: boolean = false;
+      let titleDuplicate: boolean = false;
       if(newTitle !== "") { //reject blank titles
          if(!this.movies.includes(newTitle)){ //reject duplicate titles
             this.movies.push(newTitle);
+         }else{
+            titleDuplicate = true;
+            console.log(`titleDuplicate: ${titleDuplicate}`);
          }
+      }else{
+         titleBlank = true;
+         console.log(`titleBlank: ${titleBlank}`);
       }  
    }
 }

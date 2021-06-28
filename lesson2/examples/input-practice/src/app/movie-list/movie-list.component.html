@@ -6,4 +6,6 @@
     <hr>
     <input #newMovie (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
     <button (click)="addMovie(newMovie.value); newMovie.value = ''">Add</button>
+    <p style="color:red;" *ngIf = "titleBlank === true">Title cannot be blank.</p>
+    <p style="color:red;" *ngIf = "titleDuplicate === true">Title already exists.</p>
 </div>

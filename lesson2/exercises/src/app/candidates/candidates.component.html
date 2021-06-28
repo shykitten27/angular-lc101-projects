@@ -5,7 +5,7 @@
         <div class="candidates col-3">
             <h2>Candidates</h2>
             <ol>
-                <li>Use *ngFor to automatically list all of the candidates' names.</li>
+                <li (click)='true' *ngFor = "let candidate of candidates">{{candidate.name}}</li>
             </ol>
         </div>
     
@@ -45,3 +45,4 @@
         <input #newName type="text"/>
     </h2>
 </ng-template>
+
