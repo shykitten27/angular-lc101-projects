@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="centered">Mission Name: {{missionName}}</h2>
+    <h2 class="centered" *ngIf = "!editMissionName; else editMission" (click)="editMissionName = true">Mission Name: {{missionName}}</h2>
     <br>
     <div class="row justify-content-center">
         <div class="candidates col-3">
@@ -38,8 +38,11 @@
     <hr>
     <div class = 'centered'>
         <button (click)="selected=false">Clear Data & Image</button>
-        <button (click)="addToCrew(selected)">Send on Mission</button>
         <!-- Add a "Send on Mission" button here. -->
+        <!-- display button IF member selected AND
+             member selected is NOT already added AND
+             crew.length greater than 3 members  -->
+        <button *ngIf="selected && !crew.includes(selected) && crew.length < 3" (click)="addToCrew(selected)">Send on Mission</button>
     </div>
 </div>
 
@@ -48,7 +51,7 @@
     <h2 class="centered">
         Mission Name:
         <!-- Add a keyup.enter event that calls the changeMissionName function. -->
-        <input #newName type="text"/>
+        <input (keyup.enter)="editMissionName = changeMissionName(newName.value)" #newName type="text"/>
     </h2>
 </ng-template>
 
