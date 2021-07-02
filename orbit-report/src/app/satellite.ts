@@ -21,12 +21,4 @@ export class Satellite {
             return false;  
         }
     }
-
-    // sumMass(items: Payload[]): number {
-    //     let totMass: number = 0;
-    //     for(let i=0; i < items.length; i++) {
-    //         totMass += items[i].massKg;
-    //     }
-    //     return totMass;
-    // }  
 }
