@@ -24,7 +24,13 @@ export class CandidatesComponent implements OnInit {
   }
 
   // Code the addToCrew function here:
-
+  addToCrew(selectedCandidate: object) {
+    //ensure the candidate is selected does NOT already exist before adding to crew array.
+    if(selectedCandidate && !this.crew.includes(selectedCandidate)) {
+      this.crew.push(selectedCandidate);
+    }
+    // console.log(`crew members are`, this.crew);
+  } 
 
   // BONUS: Code the changeMissionName function here:
 
