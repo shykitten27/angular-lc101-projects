@@ -19,6 +19,7 @@ constructor() {
       response.json().then(function(data) {
 
         let fetchedSatellites = data.satellites;
+        let length = fetchedSatellites.length;
         // TODO: loop over satellites
         // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
         // TODO: add the new Satellite object to sourceList using: this.sourceList.push(satellite);
@@ -31,6 +32,7 @@ constructor() {
                                       fetchedSatellites[i].operational);
           this.sourceList.push(satellite); //push new object
         }
+
       // make a copy of the sourceList to be shown to the user
       this.displayList = this.sourceList.slice(0);
       }.bind(this));
