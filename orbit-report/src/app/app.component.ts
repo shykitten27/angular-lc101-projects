@@ -20,7 +20,7 @@ constructor() {
 
         let fetchedSatellites = data.satellites;
         let satlength = fetchedSatellites.length;
-        console.log(`no. of satellites: ${satlength}`);
+        console.log(`satlength or fetchedSatellites.length: ${satlength}`);
         
         // TODO: loop over satellites
         // TODO: create a Satellite object using new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
@@ -37,7 +37,7 @@ constructor() {
 
       // make a copy of the sourceList to be shown to the user
       this.displayList = this.sourceList.slice(0);
-      console.log(`displayList no. of satellites: ${this.displayList.length}`);
+      console.log(`this.displayList.length: ${this.displayList.length}`);
       }.bind(this));
    }.bind(this));
 
